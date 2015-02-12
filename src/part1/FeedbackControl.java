@@ -17,7 +17,6 @@ public class FeedbackControl extends RobotProgrammingDemo {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		Robot chen = new Robot();
 
 		float desired = 15.0f;
@@ -25,8 +24,7 @@ public class FeedbackControl extends RobotProgrammingDemo {
 		while(m_run){
 			float current = chen.getRange();
 			float error = current - desired;
-			chen.move((int)error);
+			chen.move((int)error / 10);
 		}
 	}
-
 }

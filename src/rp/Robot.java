@@ -27,7 +27,42 @@ public class Robot {
 	}
 	
 	public void move(int travelSpeed){
-		pilot.setTravelSpeed(travelSpeed);
-		pilot.forward();
+		if(travelSpeed > 0)
+		{
+			pilot.setTravelSpeed(travelSpeed);
+			pilot.forward();
+		} else {
+			pilot.setTravelSpeed(-travelSpeed);
+			pilot.backward();
+		}
+	}
+	
+	public void stop() {
+		pilot.stop();
+	}
+	
+	public int getLightLeft() {
+		return lightLeft.readValue();
+	}
+	
+	public int getLightRight() {
+		return lightRight.readValue();
+	}
+	
+	public void correctLeft() {
+		pilot.arc(0, -3, true);
+	}
+	
+	public void correctRight() {
+		pilot.arc(0, 3, true);
+	}
+
+	public void correct(int i) {
+		pilot.arc(0, (double)i);
+	}
+	
+	public void lightsOn(){
+		lightRight.setFloodlight(true);
+		lightLeft.setFloodlight(true);
 	}
 }
