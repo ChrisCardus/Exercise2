@@ -15,6 +15,8 @@ public class Robot {
 	private RangeFinder ultra;
 	private int leftInit;
 	private int rightInit;
+	private boolean edge;
+	private boolean isDirectionLeft;
 	
 	public Robot() {
 		this.pilot = new DifferentialPilot(2.1f, 4.4f, Motor.A, Motor.B,
@@ -22,6 +24,7 @@ public class Robot {
 		this.lightRight = new LightSensor(SensorPort.S1);
 		this.lightLeft = new LightSensor(SensorPort.S2);
 		this.ultra = new UltrasonicSensor(SensorPort.S3);
+		edge = false;
 	}
 	
 	public void setInit(int l, int r) {
@@ -39,6 +42,26 @@ public class Robot {
 	
 	public float getRange(){
 		return ultra.getRange();
+	}
+	
+	public boolean isOnLeft() {
+		return getLightLeft() < (getLeftInit() - 3);
+	}
+	
+	public boolean isOnRight() {
+		return getLightRight() < (getRightInit() - 3);
+	}
+	
+	public boolean getEdge() {
+		return edge;
+	}
+	
+	public void setEdge(boolean onEdge) {
+		edge = onEdge;
+	}
+	
+	public boolean getDirectionLeft() {
+		return isDirectionLeft;
 	}
 	
 	public void move(int travelSpeed){
@@ -98,11 +121,19 @@ public class Robot {
 	}
 
 	public void turn(boolean left) {
+		/*if(getRange() < 5){
+			edge = true;
+			direction = left;
+		}*/
+		//remember if edge
+		//remember if turned left or turned right (when you approached an edge)
+		//if turned left turning left again sets edge to false
+		//if turned right turning right again set edge to false
+		pilot.travel(3);
+		
 		if(left){
-			pilot.travel(3);
 			pilot.rotate(90);
 		} else {
-			pilot.travel(3);
 			pilot.rotate(-90);
 		}
 	}
