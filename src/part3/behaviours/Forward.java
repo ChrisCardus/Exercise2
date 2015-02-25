@@ -1,30 +1,33 @@
-package part1;
+package part3.behaviours;
 
 import lejos.robotics.subsumption.Behavior;
 import rp.Robot;
 
 public class Forward implements Behavior {
 	private boolean suppressed = false;
-	private Robot robot;
+	private Robot chen;
 	
 	public Forward(Robot robot) {
-		this.robot = robot;
+		this.chen = robot;
 	}
 
 	@Override
 	public boolean takeControl() {
-		return true;
+		for(int i = 0; i < chen.numberOfObjects(); i++){
+			System.out.println("Forward    " + chen.getRectangle(i).width);
+			if (chen.getRectangle(i).width >= 20){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
 	}
 
 	@Override
 	public void action() {
-		//System.out.println("forward" + robot.getLightLeft() + "    " + robot.getLightRight());
-
 		suppressed = false;
-		robot.move(2);
-		while(!suppressed) {
-			Thread.yield();
-		}
+		chen.move(4);
 	}
 
 	@Override

@@ -7,8 +7,8 @@ import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
 import lejos.util.Delay;
 import part1.Correct;
-import part1.Forward;
-import part2.behaviours.*;
+import part2.behaviours.Junction;
+import part3.behaviours.Forward;
 import rp.Robot;
 import rp.RobotProgrammingDemo;
 

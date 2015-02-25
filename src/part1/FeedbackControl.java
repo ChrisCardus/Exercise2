@@ -24,7 +24,8 @@ public class FeedbackControl extends RobotProgrammingDemo {
 		while(m_run){
 			float current = chen.getRange();
 			float error = current - desired;
-			chen.move((int)error / 10);
+			//System.out.println(chen.getRange() + "   " + error);
+			chen.move((int)(Math.ceil(error / 3.0f)));
 		}
 	}
 }
