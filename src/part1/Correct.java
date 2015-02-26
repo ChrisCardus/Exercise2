@@ -13,7 +13,7 @@ public class Correct implements Behavior {
 
 	@Override
 	public boolean takeControl() {
-		return robot.getLightRight() < robot.getRightInit() || robot.getLightLeft() < robot.getLeftInit();
+		return true;
 	}
 
 	@Override

@@ -15,9 +15,11 @@ public class LineFollower extends RobotProgrammingDemo {
 	public void run() {
 		Robot robot = new Robot();
 		
+		//Gives the lights time to turn on and ensures the robot is still.
 		robot.lightsOn();
 		Delay.msDelay(3000);
 		
+		//Sets the initial values of both the light sensors.
 		robot.setInit(robot.getLightLeft(), robot.getLightRight());
 		
 		while(m_run) {

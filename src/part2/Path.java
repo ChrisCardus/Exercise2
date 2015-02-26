@@ -16,15 +16,23 @@ public class Path {
 	}
 	
 	public void changeHeading(){
-		System.out.println("PATH   " + i);
+		
+		//Checks that there are still instructions left in the path.
 		if(i < headings.size()){
+			
+			//Checks that the current instruction is a turn instruction.
 			if(headings.get(i) !=  Robot.STRAIGHT){
+				//Turns the robot in the direction of the instruction i.
 				robot.turn(headings.get(i));
 			} else {
+				//Moves the robot past the junction before continuing moving forward.
 				robot.travel(3);
 			}
+			//Moves to the next instruction in the path.
 			i++;
+			//Checks if the robot has reached the end of the path.
 		} else if(i == headings.size()) {
+			//Stops the robot and iterates the instruction i to prevent an infinite loop.
 			robot.stop();
 			i++;
 		}

@@ -21,6 +21,8 @@ public class Search implements Behavior {
 	@Override
 	public void action() {
 		suppressed = false;
+		
+		//Rotates the robot on the spot.
 		chen.correctLeft();
 	}
 

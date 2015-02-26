@@ -18,12 +18,14 @@ public class Junction implements Behavior {
 
 	@Override
 	public boolean takeControl() {
+		//Returns true if both light sensors are over black lines.
 		return (robot.isOnLeft() && robot.isOnRight());
 	}
 
 	@Override
 	public void action() {
 		suppressed = false;
+		//Executes the next instruction found in the path.
 		path.changeHeading();
 	}
 
