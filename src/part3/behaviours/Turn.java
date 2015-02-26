@@ -31,7 +31,6 @@ public class Turn implements Behavior {
 	@Override
 	public void action() {
 		suppressed = false;
-		System.out.println("Turn    " + direction);
 		if (direction < 30) {
 			chen.correctLeft();
 		} else if (direction > 70) {

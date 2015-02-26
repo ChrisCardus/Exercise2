@@ -27,9 +27,9 @@ public class LineFollower extends RobotProgrammingDemo {
 
 	public static void main(String[] args) {
 		RobotProgrammingDemo demo = new LineFollower();
-		System.out.println("Please press the orange button to start");
+		System.out.println("Line Follower");
+		System.out.println("Push button to start");
 		Button.waitForAnyPress();
-		System.out.println("Please press the escape button to stop.");
 		demo.run();
 	}
 

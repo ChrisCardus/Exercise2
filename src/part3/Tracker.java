@@ -31,7 +31,8 @@ public class Tracker extends RobotProgrammingDemo {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println("Tracker");
+		System.out.println("Push button to start");
 		Button.waitForAnyPress();
 		RobotProgrammingDemo demo = new Tracker();
 		demo.run();

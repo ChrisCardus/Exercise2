@@ -21,7 +21,6 @@ public class Search implements Behavior {
 	@Override
 	public void action() {
 		suppressed = false;
-		System.out.println("Search");
 		chen.correctLeft();
 	}
 

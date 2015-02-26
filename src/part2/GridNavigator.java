@@ -26,8 +26,6 @@ public class GridNavigator extends RobotProgrammingDemo {
 		Delay.msDelay(3000);
 		robot.setInit(robot.getLightLeft(), robot.getLightRight());
 		
-		System.out.println(robot.getLeftInit() + "     " + robot.getRightInit());
-		
 		ArrayList<Integer> p = new ArrayList<Integer>();
 		p.add(Robot.STRAIGHT);
 		p.add(Robot.RIGHT);

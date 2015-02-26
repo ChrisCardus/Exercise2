@@ -8,9 +8,9 @@ public class FeedbackControl extends RobotProgrammingDemo {
 
 	public static void main(String[] args) {
 		RobotProgrammingDemo demo = new FeedbackControl();
-		System.out.println("Please press the orange button to start");
+		System.out.println("Feedback Control");
+		System.out.println("Push button to start");
 		Button.waitForAnyPress();
-		System.out.print("Please press the escape button to stop.");
 		demo.run();
 
 	}
@@ -24,7 +24,6 @@ public class FeedbackControl extends RobotProgrammingDemo {
 		while(m_run){
 			float current = chen.getRange();
 			float error = current - desired;
-			//System.out.println(chen.getRange() + "   " + error);
 			chen.move((int)(Math.ceil(error / 3.0f)));
 		}
 	}
